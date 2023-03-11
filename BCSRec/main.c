@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-
 #include "main.h"
 
 void main() {
@@ -71,24 +70,25 @@ int getIntInput(char message[]) {
 }
 
 void setLength(int input, int *length) {
-	if (input >= 0 && input < 100) {
+	if (input >= 1 || input <= 99) {
 		*length = input;
 	}
 }
 
 void setWidth(int input, int *width) {
-	if (input > 0 && input <= 100) {
+	if (input >= 1  || input <= 100) {
 		*width = input;
 	}
 }
 
 int getPerimeter(int *length, int *width) {
-	int perimeter = *length + *length + *width;
+	int formula = 2;
+	int perimeter =  formula * (*length + *width);
 	return perimeter;
 }
 
 int getArea(int *length, int *width) {
-	int area = *length * *width;
+	int area = (*length) * (*width);
 	return area;
 }
 
